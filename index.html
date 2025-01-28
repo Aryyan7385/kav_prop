@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Kaveri</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            background: #f9f9f9;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            background: white;
+            position: relative;
+            z-index: 10;
+        }
+
+        .heart {
+            font-size: 48px;
+            color: red;
+        }
+
+        .proposal-photo {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+            margin: 15px 0;
+        }
+
+        .text-content {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #message {
+            margin-top: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Falling flowers */
+        .flower {
+            position: absolute;
+            top: -50px;
+            width: 30px;
+            height: 30px;
+            background-image: url('https://i.ibb.co/WPq9sL9/flower.png'); /* Replace with your flower image */
+            background-size: cover;
+            animation: fall 5s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100px) rotate(360deg);
+                top: 100vh;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart">❤</div>
+        <h1>Dear Kaveri,</h1>
+        <!-- New image with adjusted width and hosting link -->
+        <img src="https://i.ibb.co/6rSXw2r/Whats-App-Image-2025-01-26-at-18-27-42-e5aeabde.jpg" alt="Kaveri's Photo" class="proposal-photo">
+        <div class="text-content">
+            <p>Hey ,hi kaveri ,Aryan here nam to suna hoga(TEDx) aj jisne pucha "session karna hai black and white sleeve t-shirt.
+                What's the scene is that when I first saw you while going to gym , I just turned my head revert to see who's these ?  Completely blown up. And eventually I  start liking you , something -something,ig.
+                See honestly ,no here and  there , I just start to like you , but there is no love right now .
+                But I enjoy the process of always being around you ,I feel something special 😉. The introspection is melodious.
+                Just wanna ask that can we Date once? to articulate the experience I haved., if you are comfortable with.
+                I just want to take care of your external world.</p></span>
+                I know you are so nervous right now,but please tap the yes , I have something for you. 
+                "If you are being with someone , or not interested totally fine ,I will not engage any conversation ahead " 
+                At last "Sar aakho par hai Teri narazi ❤"
+               </p>
+            <p></p>
+        </div>
+        <button onclick="showMessage()">Yes</button>
+        <div id="message" class="hidden">
+            <p>Ya I got you my Kaveri, can we meet tommorrow at the food court near the stationary point at 12?</p>
+        </div>
+    </div>
+
+    <!-- JavaScript for falling flowers -->
+    <script>
+        function showMessage() {
+            document.getElementById('message').classList.remove('hidden');
+        }
+
+        // Create falling flowers
+        function createFlower() {
+            const flower = document.createElement('div');
+            flower.classList.add('flower');
+            flower.style.left = Math.random() * 100 + 'vw';
+            flower.style.animationDuration = Math.random() * 2 + 3 + 's';
+            document.body.appendChild(flower);
+
+            // Remove flower after it falls
+            setTimeout(() => {
+                flower.remove();
+            }, 5000);
+        }
+
+        setInterval(createFlower, 300);
+    </script>
+</body>
+</html>
